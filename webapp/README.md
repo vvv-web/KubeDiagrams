@@ -1,17 +1,16 @@
-## Project Structure
-Web Interface for generating Kubernetes diagrams from manifests, Helm charts, or Helmfile files using Kubediagrams.
 # KubeDiagrams Web App
 
-A modern web application for generating Kubernetes architecture diagrams from manifests, Helm charts, or Helmfile configurations using [KubeDiagrams](https://github.com/philippemerle/KubeDiagrams).
+A modern web application for generating Kubernetes architecture diagrams from manifests, Helm charts, Helmfile configurations, and live cluster state using [KubeDiagrams](https://github.com/philippemerle/KubeDiagrams).
 
 ## Features
 
-- **Multiple Input Types**: Support for Kubernetes manifests, Helm charts, Helmfile configurations, and live cluster diagrams
-- **Flexible Output Formats**: Generate diagrams in PNG, SVG, PDF, DOT, and interactive HTML
+- **Multiple Input Types**: Support for Kubernetes manifests, Helm charts, Helmfile configurations, and live cluster state
+- **Flexible Output Formats**: Generate diagrams in PNG, JPEG, SVG, PDF, DOT, interactive HTML, and draw.io
 - **Interactive Viewer**: Explore diagrams with an interactive web viewer
 - **Built-in Examples**: Pre-loaded examples for quick testing
 - **History Management**: Keep track of your diagram generations
 - **Docker Support**: Easy deployment with Docker and Docker Compose
+- **Kubernetes Support**: Easy deployment on Kubernetes clusters
 - **Access Logging**: Apache Combined Log format compatible with GoAccess
 
 ---
@@ -30,7 +29,7 @@ cd KubeDiagrams/webapp
 #### 2. **Start the application**
 
 ```bash
-docker-compose up -d 
+docker compose up -d
 ```
 
 #### 3. **Access the application**
@@ -42,7 +41,38 @@ That's it! The application is now running with both frontend and backend service
 #### Stopping the application
 
 ```bash
-docker-compose down
+docker compose down
+```
+
+### Using Minikube
+
+#### 1. **Clone the repository**
+
+```bash
+git clone https://github.com/philippemerle/KubeDiagrams.git
+cd KubeDiagrams/webapp
+```
+
+#### 2. **Start the application**
+
+```bash
+kubectl apply -f kubernetes/kube-diagrams-webapp.yaml
+```
+
+#### 3. **Access the application**
+
+It is needed to expose the frontend service.
+
+```bash
+minikube service -n kube-diagrams frontend
+```
+
+That's it! A new tab is opened in your default browser to access the KubeDiagrams WebApp frontend.
+
+#### Stopping the application
+
+```bash
+kubectl delete -f kubernetes/kube-diagrams-webapp.yaml
 ```
 
 ---
@@ -58,7 +88,7 @@ The following command-line tools must be installed and available in your PATH:
 
 ### Docker Deployment
 - Docker Engine 20.10+
-- Docker Compose 
+- Docker Compose
 
 ### Manual Deployment
 - **Backend**: Python 3.8+, pip, venv
@@ -123,6 +153,10 @@ webapp/
 │   ├── apache.conf                 # Apache reverse proxy config
 │   └── Dockerfile                  # Frontend Docker image
 │
+├── kubernetes/                     # Kubernetes orchestration
+    └── kube-diagrams-webapp.yaml   # Manifests for deploying KubeDiagrams WebApp
+│
+├── build-and-push-images.sh        # Script to build and push both frontend and backend container images
 └── docker-compose.yml              # Docker Compose orchestration
 ```
 
@@ -219,25 +253,25 @@ The Docker Compose setup consists of two services:
 #### **Build and start services**
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 #### **Start in detached mode**
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 #### **View logs**
 
 ```bash
-docker-compose logs -f
+docker compose logs -f
 ```
 
 #### **Stop services**
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### Health Checks
@@ -314,7 +348,7 @@ Generate diagrams from Helmfile configurations.
 4. Click "Generate Diagram"
 
 **Requirement**: `helmfile` must be installed on the server.
-5. 
+
 ### 4. Cluster Tab
 Generate diagrams from a live Kubernetes cluster.
 **Steps**:
@@ -323,12 +357,12 @@ Generate diagrams from a live Kubernetes cluster.
 3. Optionally specify a namespace (leave empty to diagram all namespaces)
 4. Configure diagram options
 5. Click "Generate Cluster Diagram"
-**Requirements**: 
+**Requirements**:
 - `kubectl-diagrams` must be installed on the server
 - Server must have access to a Kubernetes cluster via kubeconfig
 - Proper RBAC permissions to read cluster resources
 **Note**: This uses the server's kubectl configuration, not the client's.
-6. 
+
 ### 5. Interactive Viewer
 View diagrams in an interactive HTML viewer with zoom, pan, and search capabilities.
 
@@ -344,7 +378,7 @@ View diagrams in an interactive HTML viewer with zoom, pan, and search capabilit
 
 ### Diagram Options
 
-- **Format**: PNG, SVG, PDF, DOT, Interactive HTML
+- **Format**: PNG, JPEG, SVG, PDF, DOT, Interactive HTML, draw.io
 - **CLI Arguments**: Optional custom parameters passed to the underlying KubeDiagrams tools
 - **Without Namespace**: Option to generate diagrams without namespace grouping
 - **Feedback System**: Rate diagrams (1-5 stars) and provide comments for improvement
