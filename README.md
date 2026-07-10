@@ -566,7 +566,7 @@ Then open the `wordpress.dot_json` file:
 
 ![KubeDiagrams Interactive Viewer](https://raw.githubusercontent.com/philippemerle/KubeDiagrams/refs/heads/main/images/KubeDiagrams-Interactive-Viewer.png)
 
-**KubeDiagrams Interactive Viewer** allows users to zoom in/out diagrams, to see cluster/node/edge tooltips, open/close clusters, move clusters/nodes interactively, and save as PNG/JPG images.
+**KubeDiagrams Interactive Viewer** allows users to zoom in/out diagrams, to see cluster/node/edge tooltips, open/close clusters, move clusters/nodes interactively, filter shown resource kinds, and save as PNG/JPG images.
 
 ## KubeDiagrams WebApp
 
@@ -721,6 +721,8 @@ Don't hesitate to submit your own real-world use cases as [pull requests](https:
 1. [Visualising SQL Server in Kubernetes](https://dbafromthecold.com/2025/02/06/visualising-sql-server-in-kubernetes/), Andrew Pruski, February 6, 2025.
 
 ### Social Networks
+
+1. [KubeDiagrams 0.8.0 is out!](https://www.reddit.com/r/kubernetes/comments/1uqlx1n/kubediagrams_080_is_out/), Reddit, July 8, 2026.
 
 1. [Pablo Cesar La Madrid Rojas's post](https://www.linkedin.com/posts/pablolamadridrojas_k8s-kubernetes-kubediagramas-activity-7478772031023476736-3K9m) on LinkedIn, July 3, 2026.
 
