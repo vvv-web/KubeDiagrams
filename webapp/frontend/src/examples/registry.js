@@ -87,7 +87,7 @@ const HELM_CHART_EXAMPLES = [
     id: 'kubernetes-dashboard',
     name: 'Kubernetes Dashboard',
     description: 'General-purpose web UI for Kubernetes clusters',
-    url: 'https://kubernetes.github.io/dashboard/kubernetes-dashboard',
+    url: 'https://kubernetes-retired.github.io/dashboard/kubernetes-dashboard',
   },
   {
     id: 'metrics-server',
@@ -156,7 +156,7 @@ const HELM_CHART_EXAMPLES = [
     name: 'GitLab',
     description: 'GitLab - DevOps platform',
     url: 'http://charts.gitlab.io/gitlab',
-    cliArgs: '--set certmanager-issuer.email=someone@acme.com',
+    cliArgs: '--set certmanager-issuer.email=someone@acme.com --version 9.11.8',
   },
   {
     id: 'mongodb',
