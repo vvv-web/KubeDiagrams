@@ -722,6 +722,14 @@ Don't hesitate to submit your own real-world use cases as [pull requests](https:
 
 ### Social Networks
 
+1. [Recai A.'s post](https://www.linkedin.com/posts/recai-akdemir_kubernetes-devops-cloudnative-share-7493209776412217344-TkQh/) on LinkedIn, August 13, 2026.
+
+1. [Tech Pulse's post](https://www.facebook.com/techpulsepage/photos/i-found-five-impressive-open-source-projects-that-automatically-generate-archite/122228848142508049/) on Facebook, August 11, 2026.
+
+1. [Donald Lutz's post](https://www.linkedin.com/posts/donald-lutz-5a9b0b2_github-philippemerlekubediagrams-generate-activity-7492708162001719296-pSSP) on LinkedIn, August 11, 2026.
+
+1. [Ayaan's post](https://x.com/twtayaan/status/2086703341149802825) on X, August 10, 2026.
+
 1. [KubeDiagrams 0.8.0 is out!](https://www.reddit.com/r/kubernetes/comments/1uqlx1n/kubediagrams_080_is_out/), Reddit, July 8, 2026.
 
 1. [Pablo Cesar La Madrid Rojas's post](https://www.linkedin.com/posts/pablolamadridrojas_k8s-kubernetes-kubediagramas-activity-7478772031023476736-3K9m) on LinkedIn, July 3, 2026.
@@ -914,7 +922,7 @@ Don't hesitate to submit your own papers, talks, blogs, social network posts, an
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=philippemerle/KubeDiagrams&type=Date)](https://www.star-history.com/#philippemerle/KubeDiagrams&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=philippemerle/KubeDiagrams&type=Date)](https://star-history.dera.page/#philippemerle/KubeDiagrams&Date)
 
 ## Issue Stats
 
